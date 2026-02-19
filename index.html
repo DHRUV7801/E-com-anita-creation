@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anita Creation - Traditional Saree Collection</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body data-theme="light">
+    
+    <!-- Header & Navbar -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="img/logo1.png" alt="Anita Creation" class="logo-img" onerror="this.style.display='none'">
+                    <span class="logo-text">Anita Creation</span>
+                </div>
+                <nav class="navbar">
+                    <ul class="nav-links" id="navLinks">
+                        <li><a href="#" onclick="navigateTo('home')" class="nav-link">Home</a></li>
+                        <li><a href="#" onclick="navigateTo('products')" class="nav-link">Products</a></li>
+                        <li><a href="#" onclick="navigateTo('about')" class="nav-link">About</a></li>
+                        <li><a href="#" onclick="navigateTo('account')" class="nav-link">Account</a></li>
+                        <li><a href="#" onclick="navigateTo('cart')" class="nav-link cart-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a></li>
+                    </ul>
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- HOME PAGE -->
+    <section id="home" class="page active-page">
+        
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Let's Enhance Your Indian Look!</h1>
+                    <p class="hero-subtitle">When you want to take a break from the world and just be yourself, wear saree!</p>
+                    <button class="btn btn-primary" onclick="navigateTo('products')">Explore Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Saree Images Row -->
+        <div class="saree-showcase">
+            <div class="container">
+                <div class="saree-images-row">
+                    <div class="saree-image-card">
+                        <img src="img/c1.jpeg" alt="Saree 1">
+                    </div>
+                    <div class="saree-image-card">
+                        <img src="img/c2.jpeg" alt="Saree 2">
+                    </div>
+                    <div class="saree-image-card">
+                        <img src="img/c3.jpeg" alt="Saree 3">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Products -->
+        <div class="featured-products section">
+            <div class="container">
+                <h2 class="section-title">Featured Products</h2>
+                <div class="products-grid featured-grid" id="featuredGrid">
+                    <!-- Featured products loaded by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Latest Products -->
+        <div class="latest-products section">
+            <div class="container">
+                <h2 class="section-title">Latest Products</h2>
+                <div class="products-grid latest-grid" id="latestGrid">
+                    <!-- Latest products loaded by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Salwar Suit Section -->
+        <div class="salwar-section section">
+            <div class="container">
+                <div class="salwar-banner">
+                    <img src="img/salwar2.jpg" alt="Salwar Suit">
+                    <div class="salwar-content">
+                        <p class="salwar-tag">Exclusively Available On Anita Creation</p>
+                        <h2>Salwar Suit</h2>
+                        <p class="salwar-desc">Salwar Suit</p>
+                        <button class="btn btn-primary" onclick="showPopup('Product is not available now')">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Brand Logos -->
+        <div class="brands-section section">
+            <div class="container">
+                <div class="brand-logos">
+                    <div class="brand-logo"><img src="img/blogo1.png" alt="Brand 1"></div>
+                    <div class="brand-logo"><img src="img/blogo2.png" alt="Brand 2"></div>
+                    <div class="brand-logo"><img src="img/blogo3.png" alt="Brand 3"></div>
+                    <div class="brand-logo"><img src="img/blogo4.png" alt="Brand 4"></div>
+                    <div class="brand-logo"><img src="img/blogo5.png" alt="Brand 5"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS PAGE -->
+    <section id="products" class="page">
+        <div class="container">
+            <div class="products-header">
+                <h1>All Products</h1>
+                <select id="sortSelect" class="sort-select">
+                    <option value="default">Default sorting</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Sort by Rating</option>
+                </select>
+            </div>
+            <div class="products-grid all-products-grid" id="allProductsGrid">
+                <!-- All products loaded by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT PAGE -->
+    <section id="about" class="page">
+        <div class="container">
+            <div class="about-content">
+                <h1 class="page-title">About Anita Creation</h1>
+                <div class="about-description">
+                    <p>Welcome to Anita Creation, your premier destination for exquisite traditional Indian sarees. Since our establishment, we have been dedicated to bringing you the finest collection of handcrafted sarees that celebrate India's rich textile heritage.</p>
+                    
+                    <p>Our carefully curated collection features a stunning array of sarees, from timeless Banarasi silks to elegant cotton weaves, each piece telling a unique story of craftsmanship and tradition. We work directly with skilled artisans across India to ensure authenticity and quality in every saree we offer.</p>
+                    
+                    <p>At Anita Creation, we believe that a saree is more than just a garment—it's an expression of grace, culture, and individuality. Whether you're looking for a stunning piece for a wedding, festival, or everyday elegance, our diverse collection has something special for every occasion.</p>
+                </div>
+
+                <div class="contact-info">
+                    <h2>Visit Us</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>Address</h3>
+                                <p>123 Silk Market Road<br>Fashion District, Mumbai<br>Maharashtra 400001, India</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h3>Phone</h3>
+                                <p>+91 98765 43210<br>+91 98765 43211</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3>Email</h3>
+                                <p>contact@anitacreation.com<br>support@anitacreation.com</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h3>Working Hours</h3>
+                                <p>Monday - Saturday: 10:00 AM - 8:00 PM<br>Sunday: 11:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACCOUNT PAGE -->
+    <section id="account" class="page">
+        <div class="container">
+            <div class="account-container">
+                <div class="auth-forms">
+                    <!-- Login Form -->
+                    <div class="auth-form login-form active-form">
+                        <h2>Login</h2>
+                        <form id="loginForm" onsubmit="return handleLogin(event)">
+                            <div class="form-group">
+                                <label for="loginUsername">Username</label>
+                                <input type="text" id="loginUsername" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="loginPassword">Password</label>
+                                <input type="password" id="loginPassword" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">Login</button>
+                            <a href="#" class="forgot-password" onclick="showPopup('Password recovery feature coming soon!')">Forgot Password?</a>
+                            <p class="switch-form">Don't have an account? <a href="#" onclick="switchToRegister(event)">Register</a></p>
+                        </form>
+                    </div>
+
+                    <!-- Register Form -->
+                    <div class="auth-form register-form">
+                        <h2>Register</h2>
+                        <form id="registerForm" onsubmit="return handleRegister(event)">
+                            <div class="form-group">
+                                <label for="registerUsername">Username</label>
+                                <input type="text" id="registerUsername" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="registerEmail">Email</label>
+                                <input type="email" id="registerEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="registerPassword">Create Password</label>
+                                <input type="password" id="registerPassword" required minlength="6">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">Register</button>
+                            <p class="switch-form">Already have an account? <a href="#" onclick="switchToLogin(event)">Login</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CART PAGE -->
+    <section id="cart" class="page">
+        <div class="container">
+            <h1 class="page-title">Shopping Cart</h1>
+            <div class="cart-container">
+                <div class="cart-items" id="cartItems">
+                    <p class="empty-cart">Your cart is empty</p>
+                </div>
+                <div class="cart-summary">
+                    <h3>Cart Summary</h3>
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">₹0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax (5%):</span>
+                        <span id="tax">₹0</span>
+                    </div>
+                    <div class="summary-row total-row">
+                        <span>Total:</span>
+                        <span id="total">₹0</span>
+                    </div>
+                    <button class="btn btn-primary btn-full" onclick="showPopup('Checkout feature coming soon!')">Proceed to Checkout</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Download Our App</h3>
+                    <p>Available on iOS and Android</p>
+                    <div class="app-icons">
+                        <a href="#"><img src="img/play-store.png" alt="Google Play"></a>
+                        <a href="#"><img src="img/app-store.png" alt="App Store"></a>
+                    </div>
+                    <div class="footer-logo-container">
+                        <img src="img/logo1.png" alt="Anita Creation" class="footer-logo" onerror="this.style.display='none'">
+                        <span class="footer-logo-text">Anita Creation</span>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Purpose</h3>
+                    <p>Our Purpose Is To Sustainably Make The Pleasure and Benefits of Traditional Accessible To Many</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li><a href="#">Coupons</a></li>
+                        <li><a href="#">Blog Post</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Join Affiliate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Anita Creation. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Popup -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup()">&times;</span>
+            <p id="popupMessage"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
